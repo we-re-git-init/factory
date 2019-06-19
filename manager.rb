@@ -38,8 +38,9 @@ class Manager < Employee
 
   def give_all_raises
     # find all the employees
-    @employees[0].give_annual_raise
-    @employees[1].give_annual_raise
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
     # give them all a raise
 
   end
