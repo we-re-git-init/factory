@@ -20,7 +20,7 @@ end
 
 employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 100000, active: false)
 
-employee2.print_info
+# employee2.print_info
 
 employee1 = Employee.new({:last_name => "Carter", :salary => 80000, :active => true, :first_name => "Majora"})
 
@@ -36,6 +36,14 @@ class Manager < Employee
     @employees = input_options[:employees]
   end
 
+  def give_all_raises
+    # find all the employees
+    @employees[0].give_annual_raise
+    @employees[1].give_annual_raise
+    # give them all a raise
+
+  end
+
   def send_report
     p "going to send that report..."
     # some sort of logic in here
@@ -45,9 +53,21 @@ end
 
 manager = Manager.new(first_name: "Manny", last_name: "Martin", salary: 110000, active: true, employees: [employee1, employee2])
 
-manager.print_info
+# manager.print_info
 
-manager.give_annual_raise
+# manager.give_annual_raise
 
-manager.print_info
+# manager.print_info
+
+
 p manager.employees
+manager.give_all_raises
+p manager.employees
+
+# employee1.print_info
+# employee2.print_info
+
+
+# Create a new file called manager.rb. Paste in the code: https://gist.github.com/peterxjang/628b90b89bd7f61f8cff9319a7f3d59d
+# Create a method in the Manager class called give_all_raises that loops through each of the manager’s employees and gives them a raise (using the give_annual_raise method). Demonstrate how it works.
+# Create a method in the Manager class called fire_all_employees that loops through each of the manager’s employees and changes their active status to false.
