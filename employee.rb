@@ -55,20 +55,6 @@ class Employee
     @active = input_options[:active]
   end
 
-  # reader/getter
-  # def first_name
-  #   @first_name
-  # end
-
-  # writer/setter
-  # def first_name=(input_first_name)
-  #   @first_name = input_first_name
-  # end
-
-  # def last_name
-  #   @last_name
-  # end
-
   def print_info
     p "#{@first_name} #{@last_name} makes $#{@salary} per year."
   end
