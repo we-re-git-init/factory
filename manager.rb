@@ -33,7 +33,6 @@ class Manager < Employee
   end
 end
 
-
 manager = Manager.new(first_name: "Manny", last_name: "Martin", salary: 110000, active: true)
 
 manager.print_info
