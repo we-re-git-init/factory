@@ -45,6 +45,9 @@
 # class
 
 class Employee
+  attr_reader :first_name
+  attr_writer :first_name
+
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
     @last_name = input_last_name
@@ -52,13 +55,15 @@ class Employee
     @active = input_active
   end
 
-  def first_name
-    @first_name
-  end
+  # reader/getter
+  # def first_name
+  #   @first_name
+  # end
 
-  def first_name=(input_first_name)
-    @first_name = input_first_name
-  end
+  # writer/setter
+  # def first_name=(input_first_name)
+  #   @first_name = input_first_name
+  # end
 
   def last_name
     @last_name
@@ -81,12 +86,12 @@ employee1 = Employee.new("Majora", "Carter", 80000, true)
 employee2 = Employee.new("Danilo", "Campos", 100000, false)
 
 # p "information before raise"
-# employee2.print_info
+employee2.print_info
 
-# employee2.give_annual_raise
+employee2.give_annual_raise
 
-# p "information after raise"
-# employee2.print_info
+p "information after raise"
+employee2.print_info
 
 p employee2.first_name
 
