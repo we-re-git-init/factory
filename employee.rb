@@ -74,10 +74,9 @@ class Employee
   end
 
   def give_annual_raise
-    @salary = @salary * 1.05
+    @salary *= 1.05
   end
 end
-
 
 # employee1 = Employee.new("Majora", "Carter", 80000, true)
 employee1 = Employee.new({:last_name => "Carter", :salary => 80000, :active => true, :first_name => "Majora"})
