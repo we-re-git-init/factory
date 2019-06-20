@@ -28,8 +28,19 @@ employee1 = Employee.new({:last_name => "Carter", :salary => 80000, :active => t
 # employee2.send_report
 
 
+module EmailReportable
+  def send_report
+    p "going to send that report..."
+    # some sort of logic in here
+    p "just sent the report"
+  end
+end
+
+
 class Manager < Employee
   attr_reader :employees
+
+  include EmailReportable
 
   def initialize(input_options)
     super
@@ -50,15 +61,9 @@ class Manager < Employee
       employee.active = false
     end
   end
-
-  def send_report
-    p "going to send that report..."
-    # some sort of logic in here
-    p "just sent the report"
-  end
 end
 
-manager = Manager.new(first_name: "Manny", last_name: "Martin", salary: 110000, active: true, employees: [employee1, employee2])
+# manager = Manager.new(first_name: "Manny", last_name: "Martin", salary: 110000, active: true, employees: [employee1, employee2])
 
 # manager.print_info
 
@@ -74,13 +79,6 @@ manager = Manager.new(first_name: "Manny", last_name: "Martin", salary: 110000, 
 # employee1.print_info
 # employee2.print_info
 
-module EmailReportable
-  def send_report
-    p "going to send that report..."
-    # some sort of logic in here
-    p "just sent the report"
-  end
-end
 
 # intern can do everything an employee can do and also can send reports
 class Intern < Employee
