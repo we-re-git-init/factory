@@ -27,7 +27,6 @@ employee1 = Employee.new({:last_name => "Carter", :salary => 80000, :active => t
 
 # employee2.send_report
 
-
 module EmailReportable
   def send_report
     p "going to send that report..."
@@ -35,7 +34,6 @@ module EmailReportable
     p "just sent the report"
   end
 end
-
 
 class Manager < Employee
   attr_reader :employees
